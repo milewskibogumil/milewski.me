@@ -1,11 +1,137 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from '@layout/Layout.astro';
+import Button from '../ui/Button.astro';
+import TrustedCompanies from '@components/TrustedCompanies.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const metadata = {
+  url: 'https://milewski.me',
+  title: 'Example',
+  description: 'Example',
+};
 ---
 
-<Layout>
-	<Welcome />
+<Layout {...metadata}>
+  <header>
+    <img
+      src="https://media.licdn.com/dms/image/v2/D4D03AQFVuSSzf7dgVw/profile-displayphoto-shrink_400_400/B4DZQyFVudHMAo-/0/1736007048512?e=1756339200&v=beta&t=stJCc0Ac1lBmHErHOQeACpHsMjag84PvrIZuG7AvvBA"
+      alt=""
+    />
+    <h1>
+      Crafting <strong>beautiful</strong> & fast digital excellence.
+    </h1>
+    <p>
+      I build high-performance websites using modern JAMstack technologies that are not just elegant, but engineered to
+      grow your business.
+    </p>
+    <div class="cta-wrapper">
+      <Button href="/about" theme="primary">Read my story</Button>
+      <Button href="/contact" theme="secondary">Let's talk</Button>
+    </div>
+  </header>
+  <TrustedCompanies />
+  <section>
+    <p>
+      👨🏻‍💻 I am a Full Stack Developer at Kryptonum - an agency that creates fast, secure and effective websites. I'm
+      responsible for building sites using modern technologies such as Next.js, Sanity.io and Astro. Slow sites are
+      annoying, and I'm a freak about their speed and smooth functioning!
+    </p>
+    <p>
+      🤝🏻 I also work as a Developer Team Leader and am responsible for planning the work of developers. I get huge
+      satisfaction from teaching others and watching them growing. I like discipline. I value efficient and effective
+      cooperation with other professionals as well.
+    </p>
+    <h2>Why that matters?</h2>
+    <p>
+      👉🏻 I use headless architecture with an eye on scalability, speed and security. I pay tremendous attention to
+      detail.
+    </p>
+    <p>
+      🌐 I have always been interested in technology. I'm fascinated by the Internet - I've been exploring the secrets
+      of how it works since I can remember.
+    </p>
+    <p>
+      💼 I help develop the technological aspects of the business - to create products that not only look great, but are
+      also profitable for business. I make sure that the customer is well taken care of and I take care of things that
+      an online business wouldn't work without!
+    </p>
+    <p>
+      🕰️ I know how important time is and I want to make the most of it. At Kryptonum we work remotely and asynchronous
+      communication is very valuable to me. Therefore, a message with clear instructions and Loom dispelling objections
+      is a daily bread for me!
+    </p>
+    <p>
+      👨🏻‍🎨 I love creating pretty and useful things. Creating (anything) is one of the most satisfying things in life for
+      me. I like to think that there is an element of art in what I do. I use animations and interactions to add magic,
+      bring the website to life, increase conversions and... make a WOW effect.
+    </p>
+    <p>
+      💪🏻 I love movement - not only in digital projects, but also in life. I trained calisthenics for a long time. I run
+      a lot. The longest distance I have run is the distance of a half-marathon - 21 km. I also like to train at the
+      gym.
+    </p>
+    <p>
+      🌡️ Besides, I test my limits and expose myself to extreme conditions - especially the weather. Winter swimming
+      (cold plunging) allow me not to forget my primitive instincts. When I want to relax, the ruska banya helps me to
+      do so.
+    </p>
+    <p>
+      💚 I love to travel. Getting to know new places, cultures and people is my thing. I am passionate about a healthy
+      lifestyle and experimenting with intermittent fasting, and I also cooking a lot!
+    </p>
+    <p>
+      ✋🏻 I like to talk about life topics. I'll talk about the weather too, but I'm especially interested in business,
+      productivity, health and philosophy. I am open to cooperation. I currently live in Warsaw and I like coffee, so
+      I'm happy to talk over it!
+    </p>
+  </section>
 </Layout>
+
+<style lang="scss">
+  header {
+    padding: 8rem 0 13rem;
+    img {
+      width: 5rem;
+      height: 5rem;
+      margin-bottom: 1rem;
+      border-radius: 50% 50% 0 0;
+      outline: 0.125rem solid var(--secondary-900);
+      outline-style: double;
+      outline-offset: 0.125rem;
+    }
+    h1 {
+      max-width: 56rem;
+      text-wrap: balance;
+      // img {
+      //   display: inline-block;
+      //   width: 0.62em;
+      //   height: 0.62em;
+      //   margin-left: -0.87em;
+      //   margin-right: 0.25em;
+      //   vertical-align: inherit;
+      //   border-radius: 50%;
+      //   transition: transform 500ms cubic-bezier(0.19, 1, 0.22, 1);
+      //   &:hover {
+      //     transform: scale(1.5);
+      //   }
+      // }
+    }
+    p {
+      margin-top: 1rem;
+      max-width: 48rem;
+      text-wrap: balance;
+      font-size: 1.25rem;
+    }
+    :global(.cta) {
+      margin-top: 3rem;
+    }
+  }
+
+  section {
+    p {
+      max-width: 42.5rem;
+      &:not(:first-child) {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+</style>
