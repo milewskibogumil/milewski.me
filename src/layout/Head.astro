@@ -1,0 +1,38 @@
+---
+type Props = {
+  url: string;
+  title: string;
+  description: string;
+};
+
+const THEME_COLOR = '#1F1F1F';
+const lang = 'en';
+
+const { url, title, description } = Astro.props;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="theme-color" content={THEME_COLOR} />
+<link rel="manifest" href="/manifest.webmanifest" />
+<link rel="canonical" href={url} />
+<meta property="og:url" content={url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:site_name" content={title} />
+<meta property="og:locale" content={lang} />
+<!-- <meta property="og:image" content={ogImage.url} /> -->
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<!-- <meta name="twitter:image" content={ogImage.url} /> -->
+<meta name="twitter:image:width" content="1200" />
+<meta name="twitter:image:height" content="630" />
+<link rel="sitemap" href="/sitemap-index.xml" />

@@ -1,0 +1,25 @@
+---
+import type { ComponentProps } from 'astro/types';
+import '@shared/global.scss';
+import Head from '@layout/Head.astro';
+import Header from '@components/Header.astro';
+
+type Props = ComponentProps<typeof Head>;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Head {...Astro.props} />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=gambetta@400&f[]=general-sans@400&f[]=manrope@400&f[]=satoshi@400&f[]=sentient@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+  </body>
+</html>
